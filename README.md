@@ -1,5 +1,5 @@
 
-![alt text](https://github.com//ibrahimceyisakar/Content-Sentiment-Analysis/blob/main/SentimentAnalysis-1.pngraw=true)
+![alt text](https://github.com/ibrahimceyisakar/Content-Sentiment-Analysis/blob/main/SentimentAnalysis-1.png?raw=true)
 
 <!-- /code_chunk_output -->
 
