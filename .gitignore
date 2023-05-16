@@ -170,3 +170,4 @@ env_macosx/bin/python3.10
 env_macosx/bin/tqdm
 env_macosx/pyvenv.cfg
 .DS_Store
+comments.csv
