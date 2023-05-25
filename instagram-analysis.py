@@ -32,7 +32,7 @@ for comment in scraped_comments:
         "user_pk": comment.user.pk,
         "name": comment.user.username,
         "profile_pic_url": comment.user.profile_pic_url,
-        "text": comment.text,
+        "text": comment.text.encode("utf-8"),
         "text_translated": comment_text_en,
         "published": comment.created_at_utc,
         "like_count": comment.like_count,
