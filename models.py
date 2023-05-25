@@ -216,4 +216,4 @@ class CSVExporter:
         with open("comments.csv", "w", encoding="utf8", newline="") as output_file:
             dict_writer = csv.DictWriter(output_file, keys)
             dict_writer.writeheader()
-            dict_writer.writerows(comments.decode("utf8"))
+            dict_writer.writerows(comments)
