@@ -19,7 +19,8 @@ comments = []
 
 for comment in scraped_comments:
     # Translate each comment to english
-    comment_text_en = TextTranslator.to_english(comment["content"])
+    print(comment)
+    comment_text_en = TextTranslator.to_english(comment.text)
     # Analyze each comment's sentiment in src language (polarity, subjectivity, afinn_score)
     polarity, subjectivity = SentimentAnalysis.analyze(comment["content"])
     afinn_score = SentimentAnalysis.analyze_afinn(comment["content"])
