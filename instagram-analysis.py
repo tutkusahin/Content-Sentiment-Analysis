@@ -22,21 +22,21 @@ for comment in scraped_comments:
     print(comment)
     comment_text_en = TextTranslator.to_english(comment.text)
     # Analyze each comment's sentiment in src language (polarity, subjectivity, afinn_score)
-    polarity, subjectivity = SentimentAnalysis.analyze(comment["content"])
-    afinn_score = SentimentAnalysis.analyze_afinn(comment["content"])
+    polarity, subjectivity = SentimentAnalysis.analyze(comment.text)
+    afinn_score = SentimentAnalysis.analyze_afinn(comment.text)
     # Analyze each comment's sentiment in en language (polarity_en, subjectivity_en, afinn_score_en)
     polarity_en, subjectivity_en = SentimentAnalysis.analyze(comment_text_en)
     afinn_score_en = SentimentAnalysis.analyze_afinn(comment_text_en)
 
     comment_dict = {
-        "user_pk": comment["author"]["id"],
-        "name": comment["author"]["name"],
-        "profile_pic_url": comment["author"]["thumbnails"][0]["url"],
-        "text": comment["content"],
+        "user_pk": comment.user.pk,
+        "name": comment.user.username,
+        "profile_pic_url": comment.user.profile_pic_url,
+        "text": comment.text,
         "text_translated": comment_text_en,
-        "published": comment["published"],
-        "like_count": comment["votes"]["simpleText"],
-        "reply_count": comment["replyCount"],
+        "published": comment.created_at_utc,
+        "like_count": comment.like_count,
+        "reply_count": 0,
         "polarity": polarity,
         "subjectivity": subjectivity,
         "afinn_score": afinn_score,
