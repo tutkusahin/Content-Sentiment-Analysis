@@ -53,5 +53,7 @@ try:
 
     print("completed main.py successfully")
 
-except UnicodeDecodeError as e:
+except UnicodeEncodeError as e:
     print("UnicodeDecodeError - (probably special to w10 or python 3.11)")
+except Exception as e:
+    print("unknown exception : ", e)
